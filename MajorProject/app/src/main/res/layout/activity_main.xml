@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main.MainMVP.MainActivity">
+
+
+    <com.haemin.major.computerengineering.CustomWidget.MajorTabBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:backable="false"
+        app:iconvisible="true"
+        android:id="@+id/tab_bar"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/tab_bar"
+        app:layout_constraintBottom_toTopOf="@id/nav_tab"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/nav_tab"
+        android:layout_width="match_parent"
+        app:tabTextColor="@color/textColor"
+        app:tabIndicatorColor="@color/textColor"
+        app:tabIndicatorHeight="1dp"
+        android:background="@color/colorPrimary"
+        android:layout_height="72dp"
+        app:tabSelectedTextColor="@color/textColor"
+        app:layout_constraintBottom_toBottomOf="parent">
+    </com.google.android.material.tabs.TabLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

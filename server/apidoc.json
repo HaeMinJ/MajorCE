@@ -1,0 +1,12 @@
+{
+  "name" : "HMRestAPIDoc",
+  "version" : "0.1.0",
+  "description" : "apiDoc basic",
+  "title" : "Custom apiDoc browser title",
+  "url" : "http://127.0.0.1:3000",
+  "sampleUrl" : "http://127.0.0.1:3000",
+  "template": {
+    "withCompare": true,
+    "withGenerator": true
+  }
+}
