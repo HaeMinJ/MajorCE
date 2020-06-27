@@ -71,9 +71,16 @@ router.post('/emailLogin', function (req, res, next) {
                 res.status(403).send({"message": "이메일 혹은 비밀번호가 일치하지 않습니다."});
             } else {
                 var token = getJwtToken([email, pw, Date.now()]);
-                connection.query("UPDATE User SET accessToken = ? WHERE userSeq = ?", [token, userInfo.userSeq]);
-                userInfo.accessToken = token;
-                res.status(200).send(userInfo);
+                connection.query("UPDATE User SET accessToken = ? WHERE userSeq = ?", [token, userInfo.insertId], function (err, result) {
+                    connection.query("SELECT * FROM User where userSeq = ?", userInfo.insertId, function (err, result) {
+                        if(err){
+                            console.log(err);
+                            res.status(500).send({"message" : "Internal Server Error"});
+                        } else{
+                            res.status(200).send(result[0]);
+                        }
+                    });
+                });
             }
         }
     });
