@@ -115,7 +115,7 @@ router.post('/register', function (req, res, next) {
                 var token = getJwtToken([params.email, params.pw, Date.now()]);
                 connection.query("UPDATE User SET accessToken = ? WHERE userSeq = ?", [token, userInfo.insertId]);
                 userInfo.accessToken = token;
-                res.status(200).send(userInfo);
+                res.status(200).send(userInfo[0]);
             }
         }
     });

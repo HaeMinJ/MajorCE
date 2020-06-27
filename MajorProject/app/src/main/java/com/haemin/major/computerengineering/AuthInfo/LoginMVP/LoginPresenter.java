@@ -27,6 +27,7 @@ public class LoginPresenter implements LoginContract.LoginPresenter {
                     loginView.showSuccess(user.getName());
                 }else{
                     loginView.showToast(StringConstant.LOGIN_ERROR);
+                    Log.e("LoginPresenter", response.message());
                 }
             }
 
