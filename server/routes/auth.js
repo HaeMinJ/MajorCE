@@ -112,7 +112,7 @@ router.post('/register', function (req, res, next) {
             if (userInfo.length === 0) {
                 res.status(403).send({"message": "이메일 혹은 비밀번호가 일치하지 않습니다."});
             } else {
-                var token = getJwtToken([email, pw, Date.now()]);
+                var token = getJwtToken([params.email, params.pw, Date.now()]);
                 connection.query("UPDATE User SET accessToken = ? WHERE userSeq = ?", [token, userInfo.insertId]);
                 userInfo.accessToken = token;
                 res.status(200).send(userInfo);
