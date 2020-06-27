@@ -114,7 +114,7 @@ router.post('/register', function (req, res, next) {
             } else {
                 var token = getJwtToken([params.email, params.pw, Date.now()]);
                 connection.query("UPDATE User SET accessToken = ? WHERE userSeq = ?", [token, userInfo.insertId], function (err, result) {
-                    connection.query("SELECT FROM User where userSeq = ?", userInfo.infoAccess, function (err, result) {
+                    connection.query("SELECT FROM User where userSeq = ?", userInfo.insertId, function (err, result) {
                         if(err){
                             console.log(err);
                             next();
