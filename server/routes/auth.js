@@ -62,25 +62,18 @@ router.post('/emailLogin', function (req, res, next) {
     var pw = req.body.pw;
     var cryptoPw = crypto.createHash('sha512').update(pw).digest('base64');
     //Todo : 레인보우 테이블 방어가 필요함.
-    connection.query("SELECT * FROM User WHERE email = ? and pw = ?", [email, cryptoPw], function (err, userInfo) {
+    connection.query("SELECT * FROM User WHERE email = ? and pw = ?", [email, cryptoPw], function (err, userInfos) {
         if (err) {
             console.log(err);
             res.status(500).send({"message" : "Internal Server Error"});
         } else {
-            if (userInfo.length === 0) {
+            if (userInfos.length === 0) {
                 res.status(403).send({"message": "이메일 혹은 비밀번호가 일치하지 않습니다."});
             } else {
                 var token = getJwtToken([email, pw, Date.now()]);
-                connection.query("UPDATE User SET accessToken = ? WHERE userSeq = ?", [token, userInfo.insertId], function (err, result) {
-                    connection.query("SELECT * FROM User where userSeq = ?", userInfo.insertId, function (err, result) {
-                        if(err){
-                            console.log(err);
-                            res.status(500).send({"message" : "Internal Server Error"});
-                        } else{
-                            res.status(200).send(result[0]);
-                        }
-                    });
-                });
+                connection.query("UPDATE User SET accessToken = ? WHERE userSeq = ?", [token, userInfos[0].userSeq]);
+                userInfos.accessToken = token;
+                res.status(200).send(userInfos[0]);
             }
         }
     });
@@ -111,7 +104,7 @@ router.post('/register', function (req, res, next) {
     var cryptoPw = crypto.createHash('sha512').update(params.pw).digest('base64');
     params.pw = cryptoPw;
     //Todo : 레인보우 테이블 방어가 필요함.
-    connection.query("INSERT INTO User SET ?", params, function (err, userInfo) {
+    connection.query("INSERT INTO User SET ?", params, function (err, userInfos) {
         if (err) {
             if(err.code == 'ER_DUP_ENTRY'){
                 res.status(400).send({"message" : "이미 존재하는 이메일입니다."});
@@ -120,12 +113,12 @@ router.post('/register', function (req, res, next) {
                 res.status(500).send({"message" : "Internal Server Error"});
             }
         } else {
-            if (userInfo.length === 0) {
+            if (userInfos.length === 0) {
                 res.status(403).send({"message": "이메일 혹은 비밀번호가 일치하지 않습니다."});
             } else {
                 var token = getJwtToken([params.email, params.pw, Date.now()]);
-                connection.query("UPDATE User SET accessToken = ? WHERE userSeq = ?", [token, userInfo.insertId], function (err, result) {
-                    connection.query("SELECT * FROM User where userSeq = ?", userInfo.insertId, function (err, result) {
+                connection.query("UPDATE User SET accessToken = ? WHERE userSeq = ?", [token, userInfos.insertId], function (err, result) {
+                    connection.query("SELECT * FROM User where userSeq = ?", userInfos.insertId, function (err, result) {
                         if(err){
                             console.log(err);
                             res.status(500).send({"message" : "Internal Server Error"});
