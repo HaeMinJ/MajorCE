@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50fd9afb-4f4b-46a9-9ae8-ab7bf3078c6f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../MajorProject/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MajorProject/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/AuthInfo/LoginMVP/LoginPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/AuthInfo/LoginMVP/LoginPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +74,7 @@
       <updated>1593270484923</updated>
       <workItem from="1593270488194" duration="482000" />
       <workItem from="1593270980493" duration="9365000" />
-      <workItem from="1593282048285" duration="481000" />
+      <workItem from="1593282048285" duration="850000" />
     </task>
     <servers />
   </component>
