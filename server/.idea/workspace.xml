@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50fd9afb-4f4b-46a9-9ae8-ab7bf3078c6f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/views/error.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/index.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/layout.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +24,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1duMNXw8BcmePCRAtD3drzHaOdE" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -28,6 +34,7 @@
     <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -49,6 +56,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\goals\Desktop\SeoulTech\MajorCEGit\server" />
       <recent name="C:\Users\goals\Desktop\SeoulTech\MajorCE\server\config" />
     </key>
   </component>
@@ -74,12 +82,15 @@
       <updated>1593270484923</updated>
       <workItem from="1593270488194" duration="482000" />
       <workItem from="1593270980493" duration="9365000" />
-      <workItem from="1593282048285" duration="942000" />
+      <workItem from="1593282048285" duration="1852000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="873" y="179" key="#SQL_Dialects" timestamp="1593272161870">
@@ -98,30 +109,30 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="634" y="272" key="FileChooserDialogImpl/0.0.1707.1027@0.0.1707.1027" timestamp="1593282373558" />
-    <state width="809" height="277" key="GridCell.Tab.0.bottom" timestamp="1593281160273">
+    <state width="1663" height="277" key="GridCell.Tab.0.bottom" timestamp="1593283823624">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="809" height="277" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1593281160273" />
-    <state width="809" height="277" key="GridCell.Tab.0.center" timestamp="1593281160273">
+    <state width="1663" height="277" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1593283823624" />
+    <state width="1663" height="277" key="GridCell.Tab.0.center" timestamp="1593283823623">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="809" height="277" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1593281160273" />
-    <state width="809" height="277" key="GridCell.Tab.0.left" timestamp="1593281160273">
+    <state width="1663" height="277" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1593283823623" />
+    <state width="1663" height="277" key="GridCell.Tab.0.left" timestamp="1593283823622">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="809" height="277" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1593281160273" />
-    <state width="809" height="277" key="GridCell.Tab.0.right" timestamp="1593281160273">
+    <state width="1663" height="277" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1593283823622" />
+    <state width="1663" height="277" key="GridCell.Tab.0.right" timestamp="1593283823624">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="809" height="277" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1593281160273" />
+    <state width="1663" height="277" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1593283823624" />
     <state x="984" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1593282055013">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="984" y="342" key="com.intellij.ide.util.TipDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1593282055013" />
-    <state x="500" y="244" key="new project wizard" timestamp="1593272339222">
+    <state x="500" y="244" key="new project wizard" timestamp="1593283156047">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="500" y="244" key="new project wizard/0.0.1707.1027@0.0.1707.1027" timestamp="1593272339222" />
+    <state x="500" y="244" key="new project wizard/0.0.1707.1027@0.0.1707.1027" timestamp="1593283156047" />
     <state x="943" y="227" key="search.everywhere.popup" timestamp="1593281160262">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
