@@ -56,7 +56,10 @@ router.post('/', function (req, res, next) {
     }else{
         var params = {
             title : req.body.title,
-            contents : req.body.contents
+            contents : req.body.contents,
+            boardSeq : BOARD_SEQ,
+            uploaderSeq : req.userInfo.userSeq,
+            uploadTime : Date.now()
         };
         connection.query("INSERT INTO Post SET ?", params, function (err, resultInfo) {
             if(err){
