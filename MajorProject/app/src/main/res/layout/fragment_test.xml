@@ -18,6 +18,7 @@
         android:visibility="visible"
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="14dp"
+        android:elevation="14dp"
         android:layout_gravity="bottom|right"
         android:background="?attr/selectableItemBackground"
         android:layout_width="56dp"

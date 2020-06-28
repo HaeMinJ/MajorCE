@@ -103,7 +103,7 @@ router.post('/files/:postSeq', function (req, res, next) {
             fileUrl: 'http://' + req.headers.host + '/uploads/' + req.file.filename,
             fileName: req.file.filename,
             fileType: 'image',
-            updateTime: Date.now(),
+            uploadTime: Date.now(),
             uploaderSeq: req.userInfo.userSeq
         };
         connection.query("INSERT INTO PostAttachFile SET ?", params, function (err, resultInfo) {

@@ -35,7 +35,7 @@ public interface RetrofitInterface {
     Call<ArrayList<PostAttachFile>> getEventFileList(@Header("x-access-token")String accessToken, @Path("postSeq")String postSeq);
     @FormUrlEncoded
     @POST("/event")
-    Call<Post> postEventInfo(@Header("x-access-token")String accessToken, @PartMap HashMap<String,String> eventPostMap);
+    Call<Post> postEventInfo(@Header("x-access-token")String accessToken, @FieldMap HashMap<String,String> eventPostMap);
     @Multipart
     @POST("/event/files/{postSeq}")
     Call<Void> uploadEventAttachFile(@Header("x-access-token")String accessToken, @Part MultipartBody.Part file, @Path("postSeq")String postSeq);
