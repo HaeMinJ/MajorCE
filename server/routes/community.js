@@ -21,7 +21,72 @@ router.get('/', function (req, res, next) {
         }
     });
 });
+
 /**
+ * @api {get} /community/posts/:postSeq
+ * @apiName getCommunityItem
+ * @apiGroup Community
+ * @apiHeader {String} x-access-token 사용자 액세스 토큰
+ * @apiParams {String} postSeq 게시글 번호
+ */
+router.get('/posts/:postSeq', function (req, res, next){
+    connection.query('SELECT * FROM Post as post JOIN User as user WHERE post.boardSeq = ? and post.postSeq = ? and post.uploaderSeq = user.userSeq order by post.uploadTime desc', [BOARD_SEQ,req.params.postSeq], function (err, postInfos) {
+        if(err){
+            console.log(err);
+            res.status(500).send({"message" : "Internal Server SQL Errror!"});
+        }else{
+            res.status(200).send(postInfos[0]);
+        }
+    });
+});
+
+/**
+ * @api {get} /community/comments/:postSeq 댓글 확인
+ * @apiName getComments
+ * @apiGroup Comments
+ * @apiHeader {String} x-access-token 사용자 액세스 토큰
+ * @apiParams {String} postSeq 게시글 번호
+ */
+router.get('/comments/:postSeq', function (req, res, next) {
+    connection.query("SELECT * FROM Comment AS co JOIN User AS us WHERE co.postSeq = ? and co.uploaderSeq = us.userSeq order by co.uploadTime desc", function (err, commentList) {
+        if(err){
+            console.log(err);
+            res.status(500).send({"message" : "Internal Server SQL Error!"});
+        }else{
+            res.status(200).send(commentList);
+        }
+    })
+});
+/**
+ * @api {post} /community/comments/ 댓글 작성
+ * @apiName postComments
+ * @apiGroup Comments
+ * @apiHeader {String} x-access-token 사용자 액세스 토큰
+ * @apiParams {String} postSeq 게시글 번호
+ *
+ */
+router.post('/comments/:postSeq', function (req, res, next) {
+    if(req.userInfo){
+        var params = {
+            uploaderSeq : req.userInfo.userSeq,
+            postSeq : req.params.postSeq,
+            commentContents : req.body.commentContents,
+            uploadTime : Date.now()
+        };
+        connection.query("INSERT INTO Comment SET ?",params, function (err, insertInfo) {
+            if(err){
+                console.log(err);
+                res.status(500).send({"message" : "Internal SQL Error!"});
+            }else{
+                res.status(200).send({});
+            }
+        })
+    }else{
+        res.status(403).send({"message" : "토큰이 만료되었습니다."});
+    }
+});
+/**
+ *
  * @api {get} /community/files/:postSeq 커뮤니티 첨부된 파일 리스트
  * @apiName getCommunityFileList
  * @apiGroup Community

@@ -42,16 +42,24 @@ public interface RetrofitInterface {
 
     @GET("/community")
     Call<ArrayList<Post>> getCommunityList(@Header("x-access-token")String accessToken);
+    @GET("/community/posts/{postSeq}")
+    Call<Post> getCommunityItem(@Header("x-access-token")String accessToken, @Path("postSeq")String postSeq);
     @GET("/community/files/{postSeq}")
     Call<ArrayList<PostAttachFile>> getCommunityFileList(@Header("x-access-token")String accessToken,@Path("postSeq")String postSeq);
 
     @FormUrlEncoded
     @POST("/community")
     Call<Post> postCommunityItem(@Header("x-access-token")String accessToken, @FieldMap HashMap<String, String> communityPostMap);
-
     @Multipart
     @POST("/community/files/{postSeq}")
     Call<Void> uploadCommunityAttachFile(@Header("x-access-token")String accessToken, @Part MultipartBody.Part part, @Path("postSeq") String postSeq);
+
+    @GET("/community/comments/{postSeq}")
+    Call<ArrayList<Comment>> getCommentList(@Header("x-access-token")String accessToken, @Path("postSeq")String postSeq);
+
+    @FormUrlEncoded
+    @POST("/community/comments/{postSeq}")
+    Call<Void> postComment(@Header("x-access-token")String accessToken, @Path("postSeq")String postSeq, @Field("commentContents")String contents);
 
     @GET("/test")
     Call<ArrayList<TestInfo>> getTestList(@Header("x-access-token")String accessToken);

@@ -5,6 +5,34 @@ public class Comment {
     private String postSeq;
     private String commentContents;
     private int commentSeq;
+    private String profileImageUrl;
+    private String name;
+
+    private long uploadTime;
+
+    public long getUploadTime() {
+        return uploadTime;
+    }
+
+    public void setUploadTime(long uploadTime) {
+        this.uploadTime = uploadTime;
+    }
+
+    public String getProfileImageUrl() {
+        return profileImageUrl;
+    }
+
+    public void setProfileImageUrl(String profileImageUrl) {
+        this.profileImageUrl = profileImageUrl;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public int getUploaderSeq() {
         return uploaderSeq;

@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.bumptech.glide.Glide;
+import com.haemin.major.computerengineering.Main.Community.CommunityInfoMVP.CommunityInfoActivity;
 import com.haemin.major.computerengineering.Model.Post;
 import com.haemin.major.computerengineering.Model.PostAttachFile;
 import com.haemin.major.computerengineering.R;
@@ -44,6 +45,9 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Post post = posts.get(position);
+        holder.itemView.setOnClickListener(v -> {
+            CommunityInfoActivity.start(context, post.getPostSeq()+"");
+        });
         holder.textTitle.setText(post.getTitle());
         holder.textUploaderName.setText(post.getName());
         RetrofitClient.getAPIService().getCommunityFileList(GlobalApplication.getToken(), post.getPostSeq()+"").enqueue(new Callback<ArrayList<PostAttachFile>>() {
