@@ -48,7 +48,7 @@ router.get('/posts/:postSeq', function (req, res, next){
  * @apiParams {String} postSeq 게시글 번호
  */
 router.get('/comments/:postSeq', function (req, res, next) {
-    connection.query("SELECT * FROM Comment AS co JOIN User AS us WHERE co.postSeq = ? and co.uploaderSeq = us.userSeq order by co.uploadTime desc", function (err, commentList) {
+    connection.query("SELECT * FROM Comment AS co JOIN User AS us WHERE co.postSeq = ? and co.uploaderSeq = us.userSeq order by co.uploadTime desc",req.params.postSeq ,function (err, commentList) {
         if(err){
             console.log(err);
             res.status(500).send({"message" : "Internal Server SQL Error!"});

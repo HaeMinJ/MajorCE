@@ -9,6 +9,7 @@ import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import com.bumptech.glide.Glide;
 import com.haemin.major.computerengineering.Model.Comment;
 import com.haemin.major.computerengineering.Model.Post;
@@ -98,6 +99,8 @@ public class CommunityInfoActivity extends AppCompatActivity implements Communit
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_community_info);
+        ButterKnife.bind(this);
+
         Intent fromOutside = getIntent();
         postSeq = fromOutside.getStringExtra("postSeq");
 
