@@ -6,6 +6,7 @@ public interface SplashContract {
         void checkPermission();
         void goToMain();
         void goToLogin();
+        void goToProfile();
     }
     interface SplashPresenter{
         void checkTokenAvailable(String token);

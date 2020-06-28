@@ -11,7 +11,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import com.bumptech.glide.Glide;
 import com.github.dhaval2404.imagepicker.ImagePicker;
+import com.haemin.major.computerengineering.Model.User;
 import com.haemin.major.computerengineering.R;
 
 import java.io.File;
@@ -53,6 +55,7 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
             btnBack.setOnClickListener(v -> finish());
             btnProfileIcon.setOnClickListener(v -> pickImage());
             btnFinish.setOnClickListener(v -> modifyProfile());
+            presenter.requestProfileData();
         }
     }
 
@@ -77,6 +80,21 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
                 .compress(1024) // 파일크기 제한
                 .maxResultSize(512,512)
                 .start(CODE_IMAGE_REQUEST);
+    }
+
+    @Override
+    public void updateView(User user) {
+        if(user.getProfileImageUrl() != null) {
+            Glide.with(this)
+                    .load(user.getProfileImageUrl())
+                    .into(btnProfileIcon);
+        }
+        if(user.getName() != null){
+            editName.setHint(user.getName());
+        }
+        if(user.getPhone() != null){
+            editPhone.setHint(user.getPhone());
+        }
     }
 
     @Override

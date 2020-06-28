@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
 import com.haemin.major.computerengineering.AuthInfo.LoginMVP.LoginActivity;
+import com.haemin.major.computerengineering.AuthInfo.ProfileMVP.ProfileActivity;
 import com.haemin.major.computerengineering.Main.MainMVP.MainActivity;
 import com.haemin.major.computerengineering.R;
 import com.haemin.major.computerengineering.SingleTon.GlobalApplication;
@@ -49,6 +50,12 @@ public class SplashActivity extends AppCompatActivity implements SplashContract.
     }
 
     @Override
+    public void goToProfile() {
+        goToMain();
+        ProfileActivity.start(this, 0+"");
+    }
+
+    @Override
     public void goToMain() {
         Intent toMain = new Intent(this, MainActivity.class);
         startActivity(toMain);
@@ -66,6 +73,7 @@ public class SplashActivity extends AppCompatActivity implements SplashContract.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        presenter = new SplashPresenter(this);
         new Handler().postDelayed(this::checkPermission, 3000);
     }
 }

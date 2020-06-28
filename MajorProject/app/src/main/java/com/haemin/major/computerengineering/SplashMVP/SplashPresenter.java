@@ -20,8 +20,13 @@ public class SplashPresenter implements SplashContract.SplashPresenter {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if(response.code() == 200 && response.body() != null){
-                    view.goToMain();
-                    view.showToast(response.body().getName()+"님 환영합니다!");
+                    if(response.body().getName() != null) {
+                        view.goToMain();
+                        view.showToast(response.body().getName() + "님 환영합니다!");
+                    }else{
+                        view.goToProfile();
+                        view.showToast("앱을 이용하시기 전에 프로필을 등록해주세요.");
+                    }
                 }else{
                     view.goToLogin();
                     view.showToast("토큰이 만료되었습니다. 다시 로그인해주세요.");

@@ -28,7 +28,7 @@ public class GlobalApplication extends Application {
         GlobalApplication.token = token;
         SharedPreferences pref = context.getSharedPreferences(APP_NAME,MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
-        editor.putString("token",null);
+        editor.putString("token",token);
         editor.apply();
 
     }

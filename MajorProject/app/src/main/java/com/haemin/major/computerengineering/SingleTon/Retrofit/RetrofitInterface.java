@@ -21,6 +21,7 @@ public interface RetrofitInterface {
     @POST("/auth/register")
     Call<User> signUpWithEmail(@Field("userType")int typeSeq,@Field("email")String email, @Field("pw")String pw);
 
+
     @FormUrlEncoded
     @POST("/profile/info/{userSeq}")
     Call<Void> modifyProfile(@Header("x-access-token")String accessToken, @Field("phone")String phone, @Field("name")String name, @Path("userSeq") String userSeq);
@@ -43,9 +44,11 @@ public interface RetrofitInterface {
     Call<ArrayList<Post>> getCommunityList(@Header("x-access-token")String accessToken);
     @GET("/community/files/{postSeq}")
     Call<ArrayList<PostAttachFile>> getCommunityFileList(@Header("x-access-token")String accessToken,@Path("postSeq")String postSeq);
+
     @FormUrlEncoded
     @POST("/community")
-    Call<ArrayList<Post>> postCommunityItem(@Header("x-access-token")String accessToken, @PartMap HashMap<String, String> communityPostMap);
+    Call<Post> postCommunityItem(@Header("x-access-token")String accessToken, @FieldMap HashMap<String, String> communityPostMap);
+
     @Multipart
     @POST("/community/files/{postSeq}")
     Call<Void> uploadCommunityAttachFile(@Header("x-access-token")String accessToken, @Part MultipartBody.Part part);
@@ -56,7 +59,7 @@ public interface RetrofitInterface {
     Call<ArrayList<PostAttachFile>> getTestFileList(@Header("x-access-token")String accessToken);
     @FormUrlEncoded
     @POST("/test")
-    Call<ArrayList<Post>> postTestInfo(@Header("x-access-token")String accessToken, @PartMap HashMap<String, String> testPostMap);
+    Call<TestInfo> postTestInfo(@Header("x-access-token")String accessToken, @FieldMap HashMap<String, String> testPostMap);
     @Multipart
     @POST("/test/files/{postSeq}")
     Call<Void> uploadTestAttachFile(@Header("x-access-token")String accessToken, @Part MultipartBody.Part part);
@@ -67,7 +70,7 @@ public interface RetrofitInterface {
     Call<ArrayList<PostAttachFile>> getPaymentFileList(@Header("x-access-token")String accessToken, @Path("paymentSeq")String paymentSeq);
     @FormUrlEncoded
     @POST("/payment")
-    Call<ArrayList<Post>> postPaymentInfo(@Header("x-access-token")String accessToken, @PartMap HashMap<String, String> paymentPostMap);
+    Call<Payment> postPaymentInfo(@Header("x-access-token")String accessToken, @FieldMap HashMap<String, String> paymentPostMap);
     @Multipart
     @POST("/payment/files/{paymentSeq}")
     Call<Void> uploadPaymentAttachFile(@Header("x-access-token")String accessToken, @Part MultipartBody.Part file);

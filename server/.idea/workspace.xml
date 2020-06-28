@@ -2,9 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50fd9afb-4f4b-46a9-9ae8-ab7bf3078c6f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/Main/Community/CommunityAddMVP/CommunityAddContract.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/Main/Community/CommunityAddMVP/CommunityAddPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/Main/Community/CommunityFragmentMVP/CommunityAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/PickedImageAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/res/drawable/bg_select_image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/res/drawable/ic_add_circle_black_24dp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/res/layout/recycler_image.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/AuthInfo/ProfileMVP/ProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/AuthInfo/ProfileMVP/ProfileActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/AuthInfo/ProfileMVP/ProfileContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/AuthInfo/ProfileMVP/ProfileContract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/AuthInfo/ProfileMVP/ProfilePresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/AuthInfo/ProfileMVP/ProfilePresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/AuthInfo/SignUpMVP/SignUpActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/AuthInfo/SignUpMVP/SignUpActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/Main/Community/CommunityAddMVP/CommunityAddActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/Main/Community/CommunityAddMVP/CommunityAddActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/Main/Community/CommunityFragmentMVP/CommunityFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/Main/Community/CommunityFragmentMVP/CommunityFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/Main/Community/CommunityFragmentMVP/CommunityPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/Main/Community/CommunityFragmentMVP/CommunityPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/SingleTon/GlobalApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/SingleTon/GlobalApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/SingleTon/Retrofit/RetrofitInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/SingleTon/Retrofit/RetrofitInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/SplashMVP/SplashActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/SplashMVP/SplashActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/SplashMVP/SplashContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/SplashMVP/SplashContract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/SplashMVP/SplashPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/SplashMVP/SplashPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/res/layout/activity_community_add.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/res/layout/activity_community_add.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/res/layout/fragment_community.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/res/layout/fragment_community.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/res/layout/fragment_event.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/res/layout/fragment_event.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/res/layout/fragment_payment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/res/layout/fragment_payment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/res/layout/fragment_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/res/layout/fragment_test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/res/layout/recycler_project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/res/layout/recycler_project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/community.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/community.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +104,7 @@
       <updated>1593270484923</updated>
       <workItem from="1593270488194" duration="482000" />
       <workItem from="1593270980493" duration="9365000" />
-      <workItem from="1593282048285" duration="15169000" />
+      <workItem from="1593282048285" duration="16529000" />
     </task>
     <servers />
   </component>
