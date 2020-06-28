@@ -121,7 +121,7 @@ public class CommunityInfoActivity extends AppCompatActivity implements Communit
             btnSend.setOnClickListener(v -> {
                 presenter.postComment(postSeq, editComment.getText().toString());
             });
-
+            refreshAll();
         }
     }
 }

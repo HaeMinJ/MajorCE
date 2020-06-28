@@ -25,7 +25,7 @@ router.get('/', function (req, res, next) {
  * @apiName getTestFileList
  * @apiGroup Test
  * @apiHeader {String} x-access-token 사용자 액세스 토큰
- * @apiParams {String} postSeq 게시글 번호
+ * @apiParam {String} postSeq 게시글 번호
  */
 router.get('/files/:postSeq',function (req, res, next) {
     connection.query('SELECT * FROM PostAttachFile WHERE postSeq = ?', req.params.postSeq, function (err, fileList) {
@@ -42,12 +42,12 @@ router.get('/files/:postSeq',function (req, res, next) {
  * @apiName postTestInfo
  * @apiGroup Test
  * @apiHeader {String} x-access-token 사용자 액세스 토큰
- * @apiParams {String} title 제목
- * @apiParams {String} contents 내용
- * @apiParams {String} testName 시험 이름
- * @apiParams {long} testTime 시험 시간
- * @apiParams {String} testRange 시험 범위
- * @apiParams {String} className 강의 이름
+ * @apiParam {String} title 제목
+ * @apiParam {String} contents 내용
+ * @apiParam {String} testName 시험 이름
+ * @apiParam {long} testTime 시험 시간
+ * @apiParam {String} testRange 시험 범위
+ * @apiParam {String} className 강의 이름
  *
  * @apiSuccess {String} postSeq 추가된 게시글 번호
  * @apiSuccess {String} title 추가된 게시글 제목
@@ -74,6 +74,7 @@ router.post('/', function (req, res, next) {
                 console.log(err);
                 res.status(400).send({});
             } else {
+                testParams.postSeq = resultInfo.insertId;
                 connection.query("INSERT INTO TestInfo SET ?", testParams, function (err ,dummyData) {
                     if(err){
                         console.log(err);
@@ -93,7 +94,7 @@ router.post('/', function (req, res, next) {
  * @apiName postTestFileList
  * @apiGroup Test
  * @apiHeader {String} x-access-token 사용자 액세스 토큰
- * @apiParams {File} file 첨부할 파일 -> 하나씩 여러번 호출한다.
+ * @apiParam {File} file 첨부할 파일 -> 하나씩 여러번 호출한다.
  *
  */
 router.post('/files/:postSeq', function (req, res, next) {

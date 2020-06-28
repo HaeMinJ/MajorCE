@@ -25,7 +25,7 @@ router.get('/', function (req, res, next) {
  * @apiName getPaymentFileList
  * @apiGroup Payment
  * @apiHeader {String} x-access-token 사용자 액세스 토큰
- * @apiParams {String} postSeq 게시글 번호
+ * @apiParam {String} postSeq 게시글 번호
  */
 router.get('/files/:postSeq',function (req, res, next) {
     connection.query('SELECT * FROM PostAttachFile WHERE postSeq = ?', req.params.postSeq, function (err, fileList) {
@@ -44,10 +44,10 @@ router.get('/files/:postSeq',function (req, res, next) {
  * @apiName postPaymentInfo
  * @apiGroup Payment
  * @apiHeader {String} x-access-token 사용자 액세스 토큰
- * @apiParams {String} title 제목
- * @apiParams {String} contents 내용
- * @apiParams {String} paymentTitle 결제 제목
- * @apiParams {String} paymentContents 결제 내용
+ * @apiParam {String} title 제목
+ * @apiParam {String} contents 내용
+ * @apiParam {String} paymentTitle 결제 제목
+ * @apiParam {String} paymentContents 결제 내용
  *
  * @apiSuccess {String} postSeq 추가된 게시글 번호
  * @apiSuccess {String} title 추가된 게시글 제목
@@ -72,6 +72,7 @@ router.post('/', function (req, res, next) {
                 console.log(err);
                 res.status(400).send({});
             } else {
+                paymentParams.postSeq = resultInfo.insertId;
                 connection.query("INSERT INTO Payment SET ?", paymentParams, function (err ,dummyData) {
                     if(err){
                         console.log(err);
@@ -91,7 +92,7 @@ router.post('/', function (req, res, next) {
  * @apiName postPaymentFileList
  * @apiGroup Payment
  * @apiHeader {String} x-access-token 사용자 액세스 토큰
- * @apiParams {File} file 첨부할 파일 -> 하나씩 여러번 호출한다.
+ * @apiParam {File} file 첨부할 파일 -> 하나씩 여러번 호출한다.
  *
  */
 router.post('/files/:postSeq', function (req, res, next) {

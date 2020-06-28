@@ -49,6 +49,7 @@
             android:maxLength="12"
             />
         <TextView
+            android:id="@+id/text_contents"
             tools:text="월요일 6-9교시 모바일 프로그래밍 중간고사가 예정되어있습니다."
             android:maxWidth="216dp"
             android:maxLines="3"

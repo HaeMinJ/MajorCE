@@ -110,7 +110,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/auth/tokenLogin",
+    "url": "/auth/checkToken",
     "title": "토큰 자동 로그인",
     "name": "TokenLogin",
     "group": "Auth",
@@ -194,7 +194,7 @@ define({ "api": [
     "groupTitle": "Auth",
     "sampleRequest": [
       {
-        "url": "http://127.0.0.1:3000/auth/tokenLogin"
+        "url": "http://127.0.0.1:3000/auth/checkToken"
       }
     ]
   },
@@ -304,6 +304,88 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/community/comments/:postSeq",
+    "title": "댓글 확인",
+    "name": "getComments",
+    "group": "Comments",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>사용자 액세스 토큰</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "postSeq",
+            "description": "<p>게시글 번호</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/community.js",
+    "groupTitle": "Comments",
+    "sampleRequest": [
+      {
+        "url": "http://127.0.0.1:3000/community/comments/:postSeq"
+      }
+    ]
+  },
+  {
+    "type": "post",
+    "url": "/community/comments/",
+    "title": "댓글 작성",
+    "name": "postComments",
+    "group": "Comments",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>사용자 액세스 토큰</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "postSeq",
+            "description": "<p>게시글 번호</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/community.js",
+    "groupTitle": "Comments",
+    "sampleRequest": [
+      {
+        "url": "http://127.0.0.1:3000/community/comments/"
+      }
+    ]
+  },
+  {
+    "type": "get",
     "url": "/community/files/:postSeq",
     "title": "커뮤니티 첨부된 파일 리스트",
     "name": "getCommunityFileList",
@@ -321,12 +403,66 @@ define({ "api": [
         ]
       }
     },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "postSeq",
+            "description": "<p>게시글 번호</p>"
+          }
+        ]
+      }
+    },
     "version": "0.0.0",
     "filename": "routes/community.js",
     "groupTitle": "Community",
     "sampleRequest": [
       {
         "url": "http://127.0.0.1:3000/community/files/:postSeq"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/community/posts/:postSeq",
+    "title": "",
+    "name": "getCommunityItem",
+    "group": "Community",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "x-access-token",
+            "description": "<p>사용자 액세스 토큰</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "postSeq",
+            "description": "<p>게시글 번호</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/community.js",
+    "groupTitle": "Community",
+    "sampleRequest": [
+      {
+        "url": "http://127.0.0.1:3000/community/posts/:postSeq"
       }
     ]
   },
@@ -373,6 +509,26 @@ define({ "api": [
             "optional": false,
             "field": "x-access-token",
             "description": "<p>사용자 액세스 토큰</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "title",
+            "description": "<p>제목</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "contents",
+            "description": "<p>내용</p>"
           }
         ]
       }
@@ -428,6 +584,19 @@ define({ "api": [
             "optional": false,
             "field": "x-access-token",
             "description": "<p>사용자 액세스 토큰</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "postSeq",
+            "description": "<p>게시글 번호</p>"
           }
         ]
       }
@@ -488,6 +657,19 @@ define({ "api": [
         ]
       }
     },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "File",
+            "optional": false,
+            "field": "file",
+            "description": "<p>첨부할 파일 -&gt; 하나씩 여러번 호출한다.</p>"
+          }
+        ]
+      }
+    },
     "version": "0.0.0",
     "filename": "routes/community.js",
     "groupTitle": "Event",
@@ -516,6 +698,19 @@ define({ "api": [
         ]
       }
     },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "File",
+            "optional": false,
+            "field": "file",
+            "description": "<p>첨부할 파일 -&gt; 하나씩 여러번 호출한다.</p>"
+          }
+        ]
+      }
+    },
     "version": "0.0.0",
     "filename": "routes/event.js",
     "groupTitle": "Event",
@@ -540,6 +735,26 @@ define({ "api": [
             "optional": false,
             "field": "x-access-token",
             "description": "<p>사용자 액세스 토큰</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "title",
+            "description": "<p>제목</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "contents",
+            "description": "<p>내용</p>"
           }
         ]
       }
@@ -599,6 +814,19 @@ define({ "api": [
         ]
       }
     },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "postSeq",
+            "description": "<p>게시글 번호</p>"
+          }
+        ]
+      }
+    },
     "version": "0.0.0",
     "filename": "routes/payment.js",
     "groupTitle": "Payment",
@@ -627,6 +855,19 @@ define({ "api": [
         ]
       }
     },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "File",
+            "optional": false,
+            "field": "file",
+            "description": "<p>첨부할 파일 -&gt; 하나씩 여러번 호출한다.</p>"
+          }
+        ]
+      }
+    },
     "version": "0.0.0",
     "filename": "routes/payment.js",
     "groupTitle": "Payment",
@@ -651,6 +892,40 @@ define({ "api": [
             "optional": false,
             "field": "x-access-token",
             "description": "<p>사용자 액세스 토큰</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "title",
+            "description": "<p>제목</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "contents",
+            "description": "<p>내용</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "paymentTitle",
+            "description": "<p>결제 제목</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "paymentContents",
+            "description": "<p>결제 내용</p>"
           }
         ]
       }
@@ -799,6 +1074,19 @@ define({ "api": [
         ]
       }
     },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "postSeq",
+            "description": "<p>게시글 번호</p>"
+          }
+        ]
+      }
+    },
     "version": "0.0.0",
     "filename": "routes/test.js",
     "groupTitle": "Test",
@@ -883,6 +1171,19 @@ define({ "api": [
         ]
       }
     },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "File",
+            "optional": false,
+            "field": "file",
+            "description": "<p>첨부할 파일 -&gt; 하나씩 여러번 호출한다.</p>"
+          }
+        ]
+      }
+    },
     "version": "0.0.0",
     "filename": "routes/test.js",
     "groupTitle": "Test",
@@ -907,6 +1208,54 @@ define({ "api": [
             "optional": false,
             "field": "x-access-token",
             "description": "<p>사용자 액세스 토큰</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "title",
+            "description": "<p>제목</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "contents",
+            "description": "<p>내용</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "testName",
+            "description": "<p>시험 이름</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "long",
+            "optional": false,
+            "field": "testTime",
+            "description": "<p>시험 시간</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "testRange",
+            "description": "<p>시험 범위</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "className",
+            "description": "<p>강의 이름</p>"
           }
         ]
       }

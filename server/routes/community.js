@@ -27,7 +27,7 @@ router.get('/', function (req, res, next) {
  * @apiName getCommunityItem
  * @apiGroup Community
  * @apiHeader {String} x-access-token 사용자 액세스 토큰
- * @apiParams {String} postSeq 게시글 번호
+ * @apiParam {String} postSeq 게시글 번호
  */
 router.get('/posts/:postSeq', function (req, res, next){
     connection.query('SELECT * FROM Post as post JOIN User as user WHERE post.boardSeq = ? and post.postSeq = ? and post.uploaderSeq = user.userSeq order by post.uploadTime desc', [BOARD_SEQ,req.params.postSeq], function (err, postInfos) {
@@ -45,7 +45,7 @@ router.get('/posts/:postSeq', function (req, res, next){
  * @apiName getComments
  * @apiGroup Comments
  * @apiHeader {String} x-access-token 사용자 액세스 토큰
- * @apiParams {String} postSeq 게시글 번호
+ * @apiParam {String} postSeq 게시글 번호
  */
 router.get('/comments/:postSeq', function (req, res, next) {
     connection.query("SELECT * FROM Comment AS co JOIN User AS us WHERE co.postSeq = ? and co.uploaderSeq = us.userSeq order by co.uploadTime desc",req.params.postSeq ,function (err, commentList) {
@@ -62,7 +62,7 @@ router.get('/comments/:postSeq', function (req, res, next) {
  * @apiName postComments
  * @apiGroup Comments
  * @apiHeader {String} x-access-token 사용자 액세스 토큰
- * @apiParams {String} postSeq 게시글 번호
+ * @apiParam {String} postSeq 게시글 번호
  *
  */
 router.post('/comments/:postSeq', function (req, res, next) {
@@ -91,7 +91,7 @@ router.post('/comments/:postSeq', function (req, res, next) {
  * @apiName getCommunityFileList
  * @apiGroup Community
  * @apiHeader {String} x-access-token 사용자 액세스 토큰
- * @apiParams {String} postSeq 게시글 번호
+ * @apiParam {String} postSeq 게시글 번호
  */
 router.get('/files/:postSeq',function (req, res, next) {
     connection.query('SELECT * FROM PostAttachFile WHERE postSeq = ?', req.params.postSeq, function (err, fileList) {
@@ -108,8 +108,8 @@ router.get('/files/:postSeq',function (req, res, next) {
  * @apiName postCommunityInfo
  * @apiGroup Community
  * @apiHeader {String} x-access-token 사용자 액세스 토큰
- * @apiParams {String} title 제목
- * @apiParams {String} contents 내용
+ * @apiParam {String} title 제목
+ * @apiParam {String} contents 내용
  *
  * @apiSuccess {String} postSeq 추가된 게시글 번호
  * @apiSuccess {String} title 추가된 게시글 제목
@@ -143,7 +143,7 @@ router.post('/', function (req, res, next) {
  * @apiName postEventFileList
  * @apiGroup Event
  * @apiHeader {String} x-access-token 사용자 액세스 토큰
- * @apiParams {File} file 첨부할 파일 -> 하나씩 여러번 호출한다.
+ * @apiParam {File} file 첨부할 파일 -> 하나씩 여러번 호출한다.
  *
  */
 router.post('/files/:postSeq', function (req, res, next) {
