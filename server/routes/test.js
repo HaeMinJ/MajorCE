@@ -11,7 +11,7 @@ const BOARD_SEQ = 2;
  *
  */
 router.get('/', function (req, res, next) {
-    connection.query('SELECT * FROM Post, User WHERE boardSeq = ? by userSeq', BOARD_SEQ, function (err, testList) {
+    connection.query('SELECT * FROM Post as post JOIN User as user JOIN TestInfo as ti WHERE post.boardSeq = ? and post.uploaderSeq = user.userSeq and post.postSeq = ti.postSeq order by post.uploadTime desc', BOARD_SEQ, function (err, testList) {
         if (err) {
             console.log(err);
             res.status(500).send({"message": "Internal Server SQL Error"});

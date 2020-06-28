@@ -11,7 +11,7 @@ const BOARD_SEQ = 3;
  *
  */
 router.get('/', function (req, res, next) {
-    connection.query('SELECT * FROM Post, User WHERE boardSeq = ? by userSeq', BOARD_SEQ, function (err, paymentList) {
+    connection.query('SELECT * FROM Post as post JOIN User as user JOIN Payment as pa WHERE post.boardSeq = ? and post.uploaderSeq = user.userSeq and post.postSeq = pa.postSeq order by post.uploadTime desc', BOARD_SEQ, function (err, paymentList) {
         if (err) {
             console.log(err);
             res.status(500).send({"message": "Internal Server SQL Error"});
@@ -64,8 +64,8 @@ router.post('/', function (req, res, next) {
             uploaderSeq: req.userInfo.userSeq
         };
         var paymentParams = {
-            testName : req.body.paymentTitle,
-            testTime : req.body.paymentContents
+            paymentTitle : req.body.paymentTitle,
+            paymentContents : req.body.paymentContents
         };
         connection.query("INSERT INTO Post SET ?", params, function (err, resultInfo) {
             if (err) {
