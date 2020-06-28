@@ -23,10 +23,10 @@ public interface RetrofitInterface {
 
     @FormUrlEncoded
     @POST("/profile/info/{userSeq}")
-    Call<Void> modifyProfile(@Header("x-access-token")String accessToken, @Field("phone")String phone, @Field("name")String name);
+    Call<Void> modifyProfile(@Header("x-access-token")String accessToken, @Field("phone")String phone, @Field("name")String name, @Path("userSeq") String userSeq);
     @Multipart
     @POST("/profile/image/{userSeq}")
-    Call<Void> updateProfileImage(@Header("x-access-token")String accessToken, @Part MultipartBody.Part part);
+    Call<Void> updateProfileImage(@Header("x-access-token")String accessToken, @Part MultipartBody.Part file, @Path("userSeq") String userSeq);
 
     @GET("/event")
     Call<ArrayList<Post>> getEventList(@Header("x-access-token")String accessToken);
@@ -37,7 +37,7 @@ public interface RetrofitInterface {
     Call<Post> postEventInfo(@Header("x-access-token")String accessToken, @PartMap HashMap<String,String> eventPostMap);
     @Multipart
     @POST("/event/files/{postSeq}")
-    Call<Void> uploadEventAttachFile(@Header("x-access-token")String accessToken, @Part MultipartBody.Part part);
+    Call<Void> uploadEventAttachFile(@Header("x-access-token")String accessToken, @Part MultipartBody.Part file);
 
     @GET("/community")
     Call<ArrayList<Post>> getCommunityList(@Header("x-access-token")String accessToken);
@@ -70,5 +70,5 @@ public interface RetrofitInterface {
     Call<ArrayList<Post>> postPaymentInfo(@Header("x-access-token")String accessToken, @PartMap HashMap<String, String> paymentPostMap);
     @Multipart
     @POST("/payment/files/{paymentSeq}")
-    Call<Void> uploadPaymentAttachFile(@Header("x-access-token")String accessToken, @Part MultipartBody.Part part);
+    Call<Void> uploadPaymentAttachFile(@Header("x-access-token")String accessToken, @Part MultipartBody.Part file);
 }

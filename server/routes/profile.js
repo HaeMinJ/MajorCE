@@ -56,6 +56,7 @@ router.post('/image/:userSeq', function (req, res, next) {
                     }
                 })
         }else{
+            console.log("Token Expired! 인것이와요");
             res.status(403).send({"message" : "Token Expired!"});
         }
     }else{

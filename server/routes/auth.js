@@ -18,7 +18,7 @@ function getJwtToken(payload) {
 
 /**
  *
- *  @api {get} /auth/tokenLogin 토큰 자동 로그인
+ *  @api {get} /auth/checkToken 토큰 자동 로그인
  *  @apiName TokenLogin
  *  @apiGroup Auth
  *  @apiHeader {String} x-access-token 사용자 액세스 토큰

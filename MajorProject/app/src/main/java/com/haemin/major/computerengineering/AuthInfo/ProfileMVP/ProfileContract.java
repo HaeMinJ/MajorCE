@@ -10,7 +10,7 @@ public interface ProfileContract {
         void showSuccess(String text);
     }
     interface ProfilePresenter{
-        void requestModifyProfile(String code, String name);
-        void updateProfileImage(File file);
+        void requestModifyProfile(String code, String name, String userSeq );
+        void updateProfileImage(String userSeq, File file);
     }
 }

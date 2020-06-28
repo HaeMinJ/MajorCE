@@ -1,19 +1,19 @@
 package com.haemin.major.computerengineering.AuthInfo.LoginMVP;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.haemin.major.computerengineering.AuthInfo.ProfileMVP.ProfileActivity;
+import com.haemin.major.computerengineering.AuthInfo.SignUpMVP.SignUpActivity;
 import com.haemin.major.computerengineering.Main.MainMVP.MainActivity;
 import com.haemin.major.computerengineering.Model.User;
 import com.haemin.major.computerengineering.R;
-import com.haemin.major.computerengineering.AuthInfo.SignUpMVP.SignUpActivity;
 import com.haemin.major.computerengineering.SingleTon.GlobalApplication;
 import com.haemin.major.computerengineering.SingleTon.Retrofit.RetrofitClient;
 import retrofit2.Call;
@@ -45,9 +45,9 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
         btnLogin.setOnClickListener(v -> {
             String email = editEmail.getText().toString();
             String pw = editPw.getText().toString();
-            if(checkEmailRegal(email)){
+            if (checkEmailRegal(email)) {
                 presenter.checkAuth(email, pw);
-            }else{
+            } else {
                 showToast("이메일 형식이 올바르지 않습니다.");
             }
         });
@@ -58,12 +58,12 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
     protected void onPostResume() {
         super.onPostResume();
         String token = GlobalApplication.getToken();
-        if(token != null && !token.equals("") ){
+        if (token != null && !token.equals("")) {
             RetrofitClient.getAPIService().checkTokenAvailable(token).enqueue(new Callback<User>() {
                 @Override
                 public void onResponse(Call<User> call, Response<User> response) {
-                    if(response.code() == 200 && response.body() != null){
-                        Toast.makeText(LoginActivity.this, "자동로그인을 실행합니다.",Toast.LENGTH_SHORT).show();
+                    if (response.code() == 200 && response.body() != null) {
+                        Toast.makeText(LoginActivity.this, "자동로그인을 실행합니다.", Toast.LENGTH_SHORT).show();
                         MainActivity.start(LoginActivity.this);
                     }
                 }
@@ -83,9 +83,16 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
 
     @Override
     public void showSuccess(String userSeq, String name) {
-        if(name != null ) Toast.makeText(this,name+"님 환영합니다!",Toast.LENGTH_SHORT).show();
-        if(name == null) ProfileActivity.start(this,userSeq);
-        MainActivity.start(this);
+        if (name != null) {
+            Toast.makeText(this, name + "님 환영합니다!", Toast.LENGTH_SHORT).show();
+            MainActivity.start(this);
+            finish();
+        }
+        else{
+            ProfileActivity.start(this, userSeq);
+            finish();
+        }
+
     }
 
     @Override

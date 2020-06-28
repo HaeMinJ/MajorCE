@@ -1,5 +1,4 @@
 var multer = require('multer'); // express에 multer모듈 적용 (for 파일업로드)
-var upload = multer({ dest: '../uploads/' });
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {

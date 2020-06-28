@@ -21,8 +21,8 @@ public class ProfilePresenter implements ProfileContract.ProfilePresenter {
     }
 
     @Override
-    public void requestModifyProfile(String phone, String name) {
-        RetrofitClient.getAPIService().modifyProfile(GlobalApplication.getToken(), phone, name).enqueue(new Callback<Void>() {
+    public void requestModifyProfile(String phone, String name, String userSeq) {
+        RetrofitClient.getAPIService().modifyProfile(GlobalApplication.getToken(), phone, name, userSeq).enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if(response.code() == 200){
@@ -42,9 +42,9 @@ public class ProfilePresenter implements ProfileContract.ProfilePresenter {
     }
 
     @Override
-    public void updateProfileImage(File file) {
-        MultipartBody.Part part = MultipartBody.Part.createFormData("submitFile",file.getName() , RequestBody.create(MediaType.parse("image/png"), file));
-        RetrofitClient.getAPIService().updateProfileImage(GlobalApplication.getToken(), part).enqueue(new Callback<Void>() {
+    public void updateProfileImage(String userSeq, File file) {
+        MultipartBody.Part part = MultipartBody.Part.createFormData("file",file.getName() , RequestBody.create(MediaType.parse("image/png"), file));
+        RetrofitClient.getAPIService().updateProfileImage(GlobalApplication.getToken(), part, userSeq).enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if(response.code() == 200){

@@ -68,7 +68,7 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
     }
 
     private void modifyProfile() {
-        presenter.requestModifyProfile(editPhone.getText().toString(),editName.getText().toString());
+        presenter.requestModifyProfile(editPhone.getText().toString(),editName.getText().toString(), userSeq);
     }
 
     private void pickImage() {
@@ -86,7 +86,7 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
             if(resultCode == RESULT_OK && data != null && data.getData() != null){
                 //Uri fileUri = data.getData();
                 File file = ImagePicker.Companion.getFile(data);
-                presenter.updateProfileImage(file);
+                presenter.updateProfileImage(userSeq, file);
             }else{
                 Toast.makeText(this, "이미지를 성공적으로 불러오지 못했습니다.",Toast.LENGTH_SHORT).show();
             }
