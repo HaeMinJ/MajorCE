@@ -105,7 +105,9 @@ router.post('/emailLogin', function (req, res, next) {
 router.post('/register', function (req, res, next) {
     var params = {
         email: req.body.email,
-        pw: req.body.pw
+        pw: req.body.pw,
+        joinTime : Date.now(),
+        typeSeq : req.body.userType
     }
     var cryptoPw = crypto.createHash('sha512').update(params.pw).digest('base64');
     params.pw = cryptoPw;

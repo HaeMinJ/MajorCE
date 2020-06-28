@@ -20,6 +20,7 @@ exports.checkToken = function (req, res, next) {
                     next();
                 } else if (userInfos.length == 0) {
                     console.log(userInfos);
+                    console.log("Expired! " +token);
                     next();
                 } else {
                     req.userInfo = userInfos[0];
