@@ -3,45 +3,47 @@ var router = express.Router();
 const hmUtil = require('../config/hmUtil');
 const connection = hmUtil.connection;
 
-const BOARD_SEQ = 1;
+const BOARD_SEQ = 0;
 /**
- * @api {get} /community 이벤트 리스트
- * @apiName getCommunityList
- * @apiGroup Community
+ * @api {get} /event 이벤트 리스트
+ * @apiName getEventList
+ * @apiGroup Event
  * @apiHeader {String} x-access-token 사용자 액세스 토큰
  *
  */
 router.get('/', function (req, res, next) {
-    connection.query('SELECT * FROM Post, User WHERE boardSeq = ? by userSeq', BOARD_SEQ, function (err, communityList) {
+    connection.query('SELECT * FROM Post, User WHERE boardSeq = ? by userSeq', BOARD_SEQ, function (err, eventList) {
         if (err) {
             console.log(err);
             res.status(500).send({"message": "Internal Server SQL Error"});
         } else {
-            res.status(200).send(communityList);
+            res.status(200).send(eventList);
         }
     });
 });
+
 /**
- * @api {get} /community/files/:postSeq 커뮤니티 첨부된 파일 리스트
- * @apiName getCommunityFileList
- * @apiGroup Community
+ * @api {get} /event/files/:postSeq 이벤트 첨부된 파일 리스트
+ * @apiName getEventFileList
+ * @apiGroup Event
  * @apiHeader {String} x-access-token 사용자 액세스 토큰
  * @apiParams {String} postSeq 게시글 번호
  */
-router.get('/files/:postSeq',function (req, res, next) {
+router.get('/files/:postSeq', function (req, res, next) {
     connection.query('SELECT * FROM PostAttachFile WHERE postSeq = ?', req.params.postSeq, function (err, fileList) {
-        if(err){
+        if (err) {
             console.log(err);
-            res.status(500).send({"message":"Internal Server SQL Error!"});
-        }else{
+            res.status(500).send({"message": "Internal Server SQL Error!"});
+        } else {
             res.status(200).send(fileList);
         }
     })
 });
+
 /**
- * @api {post} /community 커뮤니티 게시글 입력
- * @apiName postCommunityInfo
- * @apiGroup Community
+ * @api {post} /event 이벤트 정보입력
+ * @apiName postEventInfo
+ * @apiGroup Event
  * @apiHeader {String} x-access-token 사용자 액세스 토큰
  * @apiParams {String} title 제목
  * @apiParams {String} contents 내용
@@ -51,25 +53,28 @@ router.get('/files/:postSeq',function (req, res, next) {
  * @apiSuccess {String} contents 추가된 게시글 내용
  */
 router.post('/', function (req, res, next) {
-    if(!req.userInfo){
+    if (!req.userInfo) {
         res.status(403).send({"message": "액세스 토큰이 만료되었습니다."});
-    }else{
+    } else if (req.userInfo.userType == 0) {
+        res.status(403).send({"message": "학생회 등급 이상의 회원만 작성할 수 있습니다."});
+    } else {
         var params = {
-            title : req.body.title,
-            contents : req.body.contents
+            title: req.body.title,
+            contents: req.body.contents,
+            uploadTime : Date.now(),
+            uploaderSeq: req.userInfo.userSeq
         };
         connection.query("INSERT INTO Post SET ?", params, function (err, resultInfo) {
-            if(err){
+            if (err) {
                 console.log(err);
                 res.status(400).send({});
-            }else{
+            } else {
                 params.postSeq = resultInfo.insertId;
                 res.status(200).send(params);
             }
         })
     }
 });
-
 /**
  * @api {post} /event/files/:postSeq 이벤트 파일 첨부
  * @apiName postEventFileList
@@ -81,7 +86,9 @@ router.post('/', function (req, res, next) {
 router.post('/files/:postSeq', function (req, res, next) {
     if (!req.userInfo) {
         res.status(403).send({"message": "액세스 토큰이 만료되었습니다."});
-    }else {
+    } else if (req.userInfo.userType == 0) {
+        res.status(403).send({"message": "학생회 등급 이상의 회원만 작성할 수 있습니다."});
+    } else {
         var params = {
             postSeq: req.params.postSeq,
             fileUrl: 'http://' + req.headers.host + '/uploads/' + req.file.filename,

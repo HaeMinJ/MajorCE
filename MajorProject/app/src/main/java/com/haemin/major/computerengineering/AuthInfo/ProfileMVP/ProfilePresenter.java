@@ -21,8 +21,8 @@ public class ProfilePresenter implements ProfileContract.ProfilePresenter {
     }
 
     @Override
-    public void requestModifyProfile(String code, String name) {
-        RetrofitClient.getAPIService().modifyProfile(GlobalApplication.getToken(), code, name).enqueue(new Callback<Void>() {
+    public void requestModifyProfile(String phone, String name) {
+        RetrofitClient.getAPIService().modifyProfile(GlobalApplication.getToken(), phone, name).enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if(response.code() == 200){

@@ -2,11 +2,135 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50fd9afb-4f4b-46a9-9ae8-ab7bf3078c6f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/views/error.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/index.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/layout.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/Model/Payment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apidoc/api_data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apidoc/api_data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/s3_put.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/event.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/payment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/HM_1593324064.279_images.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/HM_1593324147_images.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/AuthInfo/LoginMVP/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/AuthInfo/LoginMVP/LoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/AuthInfo/LoginMVP/LoginContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/AuthInfo/LoginMVP/LoginContract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/AuthInfo/LoginMVP/LoginPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/AuthInfo/LoginMVP/LoginPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/AuthInfo/ProfileMVP/ProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/AuthInfo/ProfileMVP/ProfileActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/AuthInfo/ProfileMVP/ProfilePresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/AuthInfo/ProfileMVP/ProfilePresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/SingleTon/Retrofit/RetrofitInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/java/com/haemin/major/computerengineering/SingleTon/Retrofit/RetrofitInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MajorProject/app/src/main/res/layout/activity_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MajorProject/app/src/main/res/layout/activity_profile.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/hmUtil.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/hmUtil.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/api_data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/api_data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/api_project.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/api_project.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/api_project.json" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/api_project.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/fonts/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/fonts/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/img/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/img/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/locales/ca.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/locales/ca.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/locales/cs.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/locales/cs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/locales/de.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/locales/de.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/locales/es.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/locales/es.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/locales/fr.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/locales/fr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/locales/it.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/locales/it.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/locales/locale.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/locales/locale.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/locales/nl.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/locales/nl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/locales/pl.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/locales/pl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/locales/pt_br.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/locales/pt_br.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/locales/ro.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/locales/ro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/locales/ru.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/locales/ru.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/locales/tr.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/locales/tr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/locales/vi.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/locales/vi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/locales/zh.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/locales/zh.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/locales/zh_cn.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/locales/zh_cn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/utils/handlebars_helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/utils/handlebars_helper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/utils/send_sample_request.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/utils/send_sample_request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/utils/send_sample_request_utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/utils/send_sample_request_utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/diff_match_patch.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/diff_match_patch.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/handlebars.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/handlebars.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/list.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/list.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/lodash.custom.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/lodash.custom.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/path-to-regexp/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/path-to-regexp/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/path-to-regexp/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/path-to-regexp/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/polyfill.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/polyfill.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify.css" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-Splus.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-Splus.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-aea.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-aea.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-agc.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-agc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-apollo.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-apollo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-basic.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-basic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-cbm.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-cbm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-cl.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-cl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-clj.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-clj.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-css.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-dart.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-dart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-el.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-el.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-erl.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-erl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-erlang.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-erlang.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-fs.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-fs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-go.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-go.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-hs.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-hs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-lasso.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-lasso.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-lassoscript.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-lassoscript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-latex.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-latex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-lgt.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-lgt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-lisp.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-lisp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-ll.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-ll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-llvm.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-llvm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-logtalk.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-logtalk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-ls.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-ls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-lsp.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-lsp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-lua.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-lua.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-matlab.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-matlab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-ml.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-ml.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-mumps.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-mumps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-n.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-n.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-nemerle.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-nemerle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-pascal.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-pascal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-proto.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-proto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-r.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-r.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-rd.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-rd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-rkt.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-rkt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-rust.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-rust.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-s.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-s.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-scala.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-scala.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-scm.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-scm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-sql.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-sql.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-ss.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-ss.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-swift.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-swift.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-tcl.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-tcl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-tex.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-tex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-vb.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-vb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-vbs.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-vbs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-vhd.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-vhd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-vhdl.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-vhdl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-wiki.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-wiki.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-xq.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-xq.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-xquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-xquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-yaml.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-yaml.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/lang-yml.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/lang-yml.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/prettify.css" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/prettify.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/prettify.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/prettify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/prettify/run_prettify.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/prettify/run_prettify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/require.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/require.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/semver.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/semver.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/vendor/webfontloader.js" beforeDir="false" afterPath="$PROJECT_DIR$/apidoc/vendor/webfontloader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/community.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/community.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/profile.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +206,7 @@
       <updated>1593270484923</updated>
       <workItem from="1593270488194" duration="482000" />
       <workItem from="1593270980493" duration="9365000" />
-      <workItem from="1593282048285" duration="1852000" />
+      <workItem from="1593282048285" duration="13317000" />
     </task>
     <servers />
   </component>
@@ -109,22 +233,22 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="634" y="272" key="FileChooserDialogImpl/0.0.1707.1027@0.0.1707.1027" timestamp="1593282373558" />
-    <state width="1663" height="277" key="GridCell.Tab.0.bottom" timestamp="1593283823624">
+    <state width="809" height="277" key="GridCell.Tab.0.bottom" timestamp="1593332295516">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1663" height="277" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1593283823624" />
-    <state width="1663" height="277" key="GridCell.Tab.0.center" timestamp="1593283823623">
+    <state width="809" height="277" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1593332295516" />
+    <state width="809" height="277" key="GridCell.Tab.0.center" timestamp="1593332295515">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1663" height="277" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1593283823623" />
-    <state width="1663" height="277" key="GridCell.Tab.0.left" timestamp="1593283823622">
+    <state width="809" height="277" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1593332295515" />
+    <state width="809" height="277" key="GridCell.Tab.0.left" timestamp="1593332295515">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1663" height="277" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1593283823622" />
-    <state width="1663" height="277" key="GridCell.Tab.0.right" timestamp="1593283823624">
+    <state width="809" height="277" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1593332295515" />
+    <state width="809" height="277" key="GridCell.Tab.0.right" timestamp="1593332295515">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1663" height="277" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1593283823624" />
+    <state width="809" height="277" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1593332295515" />
     <state x="984" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1593282055013">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>

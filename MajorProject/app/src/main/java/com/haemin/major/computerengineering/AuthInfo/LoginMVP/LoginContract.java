@@ -4,7 +4,7 @@ public interface LoginContract {
     interface LoginView{
         void goToSignUp();
         void showToast(String text);
-        void showSuccess(String name);
+        void showSuccess(String userSeq, String name);
         boolean checkEmailRegal(String email);
     }
     interface LoginPresenter{

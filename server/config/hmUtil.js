@@ -9,15 +9,17 @@ connection.connect();
 
 exports.checkToken = function (req, res, next) {
     var token = req.headers['x-access-token'];
+    console.log(token);
     if (!token) {
         next();
     } else {
-        connection.connect("SELECT userSeq, email, name, phone, profileImageUrl, typeSeq, accessToken FROM User WHERE accessToken = ?"
+        connection.query("SELECT userSeq, email, name, phone, profileImageUrl, typeSeq, accessToken FROM User WHERE accessToken = ?"
             , token, function (err, userInfos) {
                 if (err) {
                     console.log(err);
                     next();
-                } else if (userInfos) {
+                } else if (userInfos.length == 0) {
+                    console.log(userInfos);
                     next();
                 } else {
                     req.userInfo = userInfos[0];

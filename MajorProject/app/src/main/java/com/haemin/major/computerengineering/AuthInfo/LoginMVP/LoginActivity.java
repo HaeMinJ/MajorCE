@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import com.haemin.major.computerengineering.AuthInfo.ProfileMVP.ProfileActivity;
 import com.haemin.major.computerengineering.Main.MainMVP.MainActivity;
 import com.haemin.major.computerengineering.Model.User;
 import com.haemin.major.computerengineering.R;
@@ -81,8 +82,9 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
     }
 
     @Override
-    public void showSuccess(String name) {
-        Toast.makeText(this,name+"님 환영합니다!",Toast.LENGTH_SHORT).show();
+    public void showSuccess(String userSeq, String name) {
+        if(name != null ) Toast.makeText(this,name+"님 환영합니다!",Toast.LENGTH_SHORT).show();
+        if(name == null) ProfileActivity.start(this,userSeq);
         MainActivity.start(this);
     }
 

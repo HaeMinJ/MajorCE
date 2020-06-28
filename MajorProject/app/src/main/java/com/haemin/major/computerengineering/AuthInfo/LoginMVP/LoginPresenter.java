@@ -24,7 +24,7 @@ public class LoginPresenter implements LoginContract.LoginPresenter {
                 if(response.code() == 200 && response.body() != null){
                     User user = response.body();
                     GlobalApplication.setToken(user.getAccessToken());
-                    loginView.showSuccess(user.getName());
+                    loginView.showSuccess(user.getUserSeq()+"", user.getName());
                 }else{
                     loginView.showToast(StringConstant.LOGIN_ERROR);
                     Log.e("LoginPresenter", response.message());

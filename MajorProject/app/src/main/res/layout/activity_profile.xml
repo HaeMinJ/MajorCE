@@ -20,17 +20,17 @@
         android:textColor="@color/textColor"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_student_code" />
+        app:layout_constraintTop_toBottomOf="@id/edit_phone" />
 
     <EditText
-        android:id="@+id/edit_student_code"
+        android:id="@+id/edit_phone"
         android:layout_width="0dp"
         android:layout_height="52dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="15dp"
         android:background="@android:color/white"
-        android:hint="학번 (예시 : 19101277)"
+        android:hint="휴대폰 번호 (예시 : 01098810664)"
         android:paddingStart="17dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

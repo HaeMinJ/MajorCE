@@ -2,7 +2,6 @@ package com.haemin.major.computerengineering.AuthInfo.ProfileMVP;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,8 +25,8 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
     ImageButton btnProfileIcon;
     @BindView(R.id.edit_name)
     EditText editName;
-    @BindView(R.id.edit_student_code)
-    EditText editStudentCode;
+    @BindView(R.id.edit_phone)
+    EditText editPhone;
     @BindView(R.id.btn_finish)
     Button btnFinish;
 
@@ -69,7 +68,7 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
     }
 
     private void modifyProfile() {
-        presenter.requestModifyProfile(editStudentCode.getText().toString(),editName.getText().toString());
+        presenter.requestModifyProfile(editPhone.getText().toString(),editName.getText().toString());
     }
 
     private void pickImage() {
