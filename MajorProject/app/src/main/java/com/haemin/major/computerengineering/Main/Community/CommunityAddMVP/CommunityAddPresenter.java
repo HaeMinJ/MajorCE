@@ -31,9 +31,10 @@ public class CommunityAddPresenter implements CommunityAddContract.CommunityAddP
         RetrofitClient.getAPIService().postCommunityItem(GlobalApplication.getToken(), postCommunityMap).enqueue(new Callback<Post>() {
             @Override
             public void onResponse(Call<Post> call, Response<Post> response) {
-                if(response.code() == 200){
+                if(response.code() == 200 && response.body() != null){
                     if(files.size() != 0){
-                        for(File f:files) addImage(f);
+                        for(File f:files) addImage(f, response.body().getPostSeq()+"");
+                        addView.showSuccess("게시글을 성공적으로 등록했습니다.");
                     }else{
                         addView.showSuccess("게시글을 성공적으로 등록했습니다.");
                     }
@@ -50,9 +51,9 @@ public class CommunityAddPresenter implements CommunityAddContract.CommunityAddP
             }
         });
     }
-    private void addImage(File file){
+    private void addImage(File file, String postSeq){
         MultipartBody.Part part = MultipartBody.Part.createFormData("file",file.getName() , RequestBody.create(MediaType.parse("image/png"), file));
-        RetrofitClient.getAPIService().uploadCommunityAttachFile(GlobalApplication.getToken(),part).enqueue(new Callback<Void>() {
+        RetrofitClient.getAPIService().uploadCommunityAttachFile(GlobalApplication.getToken(),part, postSeq).enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if(response.code() != 200){
